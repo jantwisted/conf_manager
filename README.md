@@ -1,4 +1,4 @@
-conf manager
+Conf Manager
 ============
 
 Conf Manager is a library to read/write configuration files.
