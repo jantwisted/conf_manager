@@ -23,8 +23,8 @@
 # define SPACE " "
 # define APPENDER SPACE CONF_SYMBOL SPACE
 #else
-#define APPENDER " = "
-#define CONF_SYMBOL "="
+# define APPENDER " = "
+# define CONF_SYMBOL "="
 #endif
 
 char* conf_read(FILE* file, char *param)
