@@ -24,6 +24,9 @@
 #include <fcntl.h>
 #include <ctype.h>
 #define SIZE 1000
+/* define the separator symbol as a string */
+#define CONF_SYMBOL "="
+
 #define MAX_FILE_SIZE 1000
 
 #ifndef __ATTR_P__

@@ -19,6 +19,14 @@
 */
 #include "cnfm.h"
 
+#ifdef CONF_SYMBOL
+# define SPACE " "
+# define APPENDER SPACE CONF_SYMBOL SPACE
+#else
+#define APPENDER " = "
+#define CONF_SYMBOL "="
+#endif
+
 char* conf_read(FILE* file, char *param)
 {
   char *buffer;
@@ -51,7 +59,7 @@ void conf_save (FILE* pFile, char* value, char* prop)
   int loc = get_count(file_prop,pFile,&nline);
   strncpy(low_buffer, &top_buffer[nline], strlen(top_buffer)-nline);
   fseek ( pFile , loc , SEEK_SET );
-  fputs (" = ", pFile );
+  fputs (APPENDER, pFile );
   fputs (value, pFile );
   fseek (pFile, 0, SEEK_CUR);
   fputs(low_buffer, pFile);
@@ -69,16 +77,16 @@ void conf_save (FILE* pFile, char* value, char* prop)
 char* get_prop(char* buff)
 {
   char *buff2 = strdup(buff);
-  char* prop = strtok(buff2, "=");
+  char* prop = strtok(buff2, CONF_SYMBOL);
   return prop;
 }
 
 char* get_value(char* buff)
 {
   char *buff2 = strdup(buff);
-   char* prop = strtok(buff2, "=");
+   char* prop = strtok(buff2, CONF_SYMBOL);
   strtok(buff2, "=");
-  char* value = strtok(NULL,"=");
+  char* value = strtok(NULL,CONF_SYMBOL);
   char value2[200];
   strncpy(value2, value, 200);
   return trim_string(value);
