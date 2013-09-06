@@ -65,7 +65,7 @@ void conf_save (FILE* pFile, char* value, char* prop)
   fputs(low_buffer, pFile);
   int nzero = nline - (loc+strlen(value)+3);
   for(;nzero>0;nzero--)
-     fputs(" ",pFile);
+    fputs(" ",pFile);
   free(top_buffer);
   free(low_buffer);
   if (fclose(pFile) == EOF) {
@@ -84,15 +84,15 @@ char* get_prop(char* buff)
 char* get_value(char* buff)
 {
   char *buff2 = strdup(buff);
-   char* prop = strtok(buff2, CONF_SYMBOL);
-  strtok(buff2, "=");
+  char* prop = strtok(buff2, CONF_SYMBOL);
+  strtok(buff2, CONF_SYMBOL);
   char* value = strtok(NULL,CONF_SYMBOL);
   char value2[200];
   strncpy(value2, value, 200);
   return trim_string(value);
 }
-
-
+ 
+ 
 
 int get_count(char* buff, FILE* fp, int *line_size)
 {
