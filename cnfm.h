@@ -31,7 +31,7 @@
 # define __ATTR_N__ __attribute__((noreturn))
 
 #endif
-
+ 
 extern char * get_prop(char *) __ATTR_P__;
 extern int get_count(char *, FILE*, int *) __ATTR_P__;
 extern char* trim_string(char*) __ATTR_P__;
