@@ -9,13 +9,8 @@ Conf Manager is a library to read/write configuration files.
 2. Add #include "cnfm.h" to your program.
 3. Call the functions you need from conf_manager library. see list of functions
 4. Compile your program with the conf_manager library.
-<<<<<<< HEAD
+
   * gcc -Wall -o example example.c conf_manager.c
-<<<<<<< HEAD
-=======
-  * gcc -Wall -o example example.c conf_manager.c
->>>>>>> 23125fb9e1554c94edf07a028b10f89b5fc4587c
-=======
 
 #### Functions ####
 
@@ -57,8 +52,10 @@ Conf Manager is a library to read/write configuration files.
   This returns the configuration value for a given attribute.
   Note: pre-opened file descriptor with read/write permissions should be passed as the first parameter.
   
-  ex: required_value = conf_read(fileDescriptor, attribute)
+  ex: 
+  
+  required_value = conf_read(fileDescriptor, attribute)
 
   
 > See the declaration of all the main and sub functions in "cnfm.h" file. 
->>>>>>> 25770c19c214d912ef0ce0d60617b5ccd2d236dd
+
